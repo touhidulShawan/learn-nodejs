@@ -48,8 +48,19 @@ const removeNote = (title) => {
   }
 };
 
+const listNote = () => {
+  const notes = loadNotes();
+
+  console.log(chalk.yellowBright.inverse("Your notes"));
+
+  notes.forEach((note) => {
+    console.log(note.title);
+  });
+};
+
 module.exports = {
   getNote: getNote,
   addNote: addNote,
   removeNote: removeNote,
+  listNote: listNote,
 };

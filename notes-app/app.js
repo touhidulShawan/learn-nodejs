@@ -48,12 +48,12 @@ yargs.command({
   },
 });
 
-// Show all notes
+// Show all notes title
 yargs.command({
   command: "list",
-  describe: "Show all notes",
+  describe: "Show all notes title",
   handler: function () {
-    console.log("Showing all notes");
+    notes.listNote();
   },
 });
 

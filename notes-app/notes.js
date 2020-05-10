@@ -58,9 +58,22 @@ const listNote = () => {
   });
 };
 
+const readNote = (title) => {
+  const notes = loadNotes();
+
+  const getNote = notes.filter((note) => note.title === title);
+
+  if (getNote.length !== 0) {
+    console.log(`Title: ${getNote[0].title}\nNote: ${getNote[0].body}`);
+  } else {
+    console.log(chalk.red.inverse("Note not found"));
+  }
+};
+
 module.exports = {
   getNote: getNote,
   addNote: addNote,
   removeNote: removeNote,
   listNote: listNote,
+  readNote: readNote,
 };
